@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".entercode"
+     android:padding="16dp">
+    <TextView
+        android:id="@+id/texttime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="9:41 "
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/robotobold"/>
+
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/backarrow"
+        android:layout_below="@id/texttime"
+
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/emailVerificationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Verification"
+        android:textSize="18sp"
+
+        android:layout_below="@id/texttime"
+
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D3D3D3"
+        android:layout_below="@id/emailVerificationText"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/entercodetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the code sent to your email"
+        android:textSize="16sp"
+        android:layout_below="@id/emailVerificationText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"/>
+
+
+    <TextView
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend code in 23s"
+        android:textSize="13sp"
+        android:textColor="#F89820"
+        android:layout_below="@id/entercodetext"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/code"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/resend"
+        android:layout_marginTop="20dp">
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+        <!-- Rounded Square EditText 1 -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="@drawable/squarebox"
+            android:hint="Box 1"
+            android:padding="10dp"/>
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+
+        <!-- Rounded Square EditText 2 -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="@drawable/squarebox"
+            android:hint="Box 2"
+            android:padding="10dp"/>
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+        <!-- Rounded Square EditText 3 -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="@drawable/squarebox"
+            android:hint="Box 3"
+            android:padding="10dp"/>
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+        <!-- Rounded Square EditText 4 -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="@drawable/squarebox"
+            android:hint="Box 4"
+            android:padding="10dp"/>
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+        <!-- Rounded Square EditText 5 -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="@drawable/squarebox"
+            android:hint="Box 5"
+            android:padding="10dp"/>
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <GridLayout
+        android:layout_width="346dp"
+        android:layout_height="446dp"
+        android:layout_below="@id/code"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:columnCount="3"
+
+        android:padding="4dp"
+        android:rowCount="4">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="2" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="3" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="4" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="5" />
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="6" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="7" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="8" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="9" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="0" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:text="0" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+
+
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:srcCompat="@drawable/backspace" />
+
+
+    </GridLayout>
+
+
+
+
+</RelativeLayout>

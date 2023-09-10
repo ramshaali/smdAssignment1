@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup"
+    android:padding="15dp"
+    >
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="9:41 "
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/robotobold"/>
+
+
+    <ImageView
+        android:id="@+id/log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/logo"
+
+        ></ImageView>
+
+    <TextView
+        android:id="@+id/textLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/log"
+        android:text="Registration"
+        android:textSize="40sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/robotobold"/>
+
+    <TextView
+        android:id="@+id/textname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textLogin"
+        android:text="Name"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/robreg"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:hint="Enter Name"
+        android:id="@+id/boxname"
+
+        android:layout_below="@+id/textname"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/textemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boxname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/robreg"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:hint="Enter Email"
+        android:id="@+id/boxemail"
+
+        android:layout_below="@+id/textemail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/textpass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/boxemail"
+        android:text="Contact Number"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/robreg"/>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:hint="Enter contact number"
+        android:id="@+id/boxpass"
+        android:layout_below="@+id/textpass"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/textcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/boxpass"
+        android:text="Country"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/robreg"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/boxcountry"
+        android:layout_below="@+id/textcon"
+        android:hint="Select Country">
+
+         <AutoCompleteTextView
+             android:id="@+id/drop1"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:inputType="none"
+             android:text=" "/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textcity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/boxpass"
+        android:text="City"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/robreg"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/boxcity"
+        android:layout_below="@+id/textcon"
+        android:hint="Select City">
+
+        <AutoCompleteTextView
+            android:id="@+id/drop2"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text=" "/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/drop2"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="9dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/round"
+        android:backgroundTint="#F89820"
+        android:elevation="25dp"
+        android:fontFamily="@font/robreg"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textSize="30sp"></Button>
+
+    <TextView
+        android:id="@+id/textsign"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="75dp"
+
+        android:fontFamily="@font/robreg"
+        android:text="Log In "
+        android:textAlignment="center"
+        android:textColor="#606060"
+        android:textSize="20sp" />
+
+</LinearLayout>
+</ScrollView>
+</RelativeLayout>
