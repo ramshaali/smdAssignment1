@@ -5,188 +5,203 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".search"
-    android:padding="16dp">
-
+    >
 
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp"
-       >
-
+        >
+    <LinearLayout
+    android:id="@+id/lay1"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Find Exactly What You Need"
-            android:textSize="24sp"
+            android:fontFamily="@font/robreg"
+            android:text="Find Exactly What You Need!"
             android:textColor="@color/black"
-            android:fontFamily="@font/robotobold"></TextView>
 
-        <!-- Search Bar -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_below="@+id/head"
+            android:textSize="24sp"></TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/boxemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textemail"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/square2">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:boxBackgroundColor="#CCCCCC"
-            app:boxBackgroundMode="filled"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp"
-            app:boxStrokeWidth="0dp"
-            app:hintEnabled="false"
-            app:endIconMode="clear_text">
+                android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Search..."
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/greysearch"
+
+                    />
+
+                <EditText
+                    android:onClick="onSearchBarClick"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:hint="Search"
+                    android:minHeight="48dp"
+                    android:paddingStart="16dp" />
+            </LinearLayout>
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <!-- Recent Searches -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recent Searches"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"/>
 
 
-
-        <!-- Popular Searches -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Popular Searches"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"/>
-
-
-        <View
+        <ListView
+            android:id="@+id/searchResultsListView"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#CCCCCC" />
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_marginTop="8dp"/>
+
+
+
+
+      </LinearLayout>
 
         <LinearLayout
-        android:layout_below="@+id/upper"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-
-
-        android:background="#FFFFFF"
-        android:paddingTop="4dp"
-    android:gravity="center">
-        <!-- Grey line -->
-            <!-- Home -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/home"
-        android:contentDescription="Home" />
-
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Home"
-            android:textSize="12sp" />
+            android:orientation="vertical"
+            android:layout_marginTop="430dp"
+            android:layout_below="@+id/lay1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCCCCC" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upper"
+                android:background="#FFFFFF"
+
+
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="4dp">
+                <!-- Grey line -->
+                <!-- Home -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="Home"
+                        android:src="@drawable/home" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Home"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="Search"
+                        android:src="@drawable/search"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Search"
+                        android:textColor="#FFA500"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <!-- Plus Sign -->
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Add"
+                    android:src="@drawable/plus" />
+                <!-- Chat -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="Chat"
+                        android:src="@drawable/chat" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chat"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Profile -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="Profile"
+                        android:src="@drawable/profile" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
 
 
-    <!-- Search -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center">
 
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/search"
-        android:contentDescription="Search"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFA500"
-            android:text="Search"
-            android:textSize="12sp" />
-    </LinearLayout>
-            <!-- Plus Sign -->
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:src="@drawable/plus"
-                android:contentDescription="Add"
-                android:layout_gravity="center" />
-    <!-- Chat -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/chat"
-        android:contentDescription="Chat" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chat"
-            android:textSize="12sp" />
-    </LinearLayout>
-
-    <!-- Profile -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/profile"
-        android:contentDescription="Profile" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile"
-            android:textSize="12sp" />
-    </LinearLayout>
-</LinearLayout>
-
-
-    </LinearLayout>
-
-
-
-    </RelativeLayout>
+</RelativeLayout>
