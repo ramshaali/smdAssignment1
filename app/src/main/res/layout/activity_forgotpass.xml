@@ -9,16 +9,6 @@
 
 
 
-    <TextView
-        android:id="@+id/texttime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="9:41 "
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/robotobold"/>
 
 
 
@@ -27,12 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/texttime"
         android:text="Forgot your password?"
         android:layout_marginTop="30dp"
         android:textSize="30sp"
         android:textColor="@color/black"
-        android:fontFamily="@font/robotobold"/>
+        android:fontFamily="@font/robreg"
+
+       />
 
     <TextView
         android:id="@+id/textemail"
@@ -43,7 +34,7 @@
         android:text="Email"
         android:layout_marginTop="15dp"
         android:textSize="20sp"
-        android:textColor="@color/black"
+        android:textColor="#6A6A6A"
         android:fontFamily="@font/robreg"/>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -51,14 +42,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
+
+
         android:hint="Enter Email"
         android:id="@+id/boxemail"
-
         android:layout_below="@+id/textemail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
-        <com.google.android.material.textfield.TextInputEditText
+        android:background="@drawable/square2"
+        >
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></com.google.android.material.textfield.TextInputEditText>
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:paddingStart="16dp"
+
+            android:minHeight="48dp"></EditText>
+
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,6 +80,8 @@
         android:elevation="30dp"
         android:text="Reset Password"
         android:backgroundTint="#F89820"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="25sp"></Button>
 
     <TextView

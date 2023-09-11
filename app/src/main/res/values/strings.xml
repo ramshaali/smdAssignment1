@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">Assignment1</string>
     <string-array name="countries">
+        <item>Enter Country</item>
         <item>Pakistan</item>
         <item>UAE</item>
         <item>Canada</item>
+    </string-array>
+
+    <string-array name="cites">
+        <item>Enter City</item>
+        <item>Lahore</item>
+        <item>Karachi</item>
+        <item>Alberta</item>
     </string-array>
 </resources>

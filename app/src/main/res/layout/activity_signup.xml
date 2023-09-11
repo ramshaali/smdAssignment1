@@ -15,16 +15,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="9:41 "
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/robotobold"/>
 
 
     <ImageView
@@ -64,15 +54,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:hint="Enter Name"
+
         android:id="@+id/boxname"
+        android:background="@drawable/square2"
 
         android:layout_below="@+id/textname"
 
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></com.google.android.material.textfield.TextInputEditText>
+            android:layout_height="wrap_content"
+            android:hint="Enter Name"
+            android:background="#00000000"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -93,14 +91,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:hint="Enter Email"
+
         android:id="@+id/boxemail"
+        android:background="@drawable/square2"
 
         android:layout_below="@+id/textemail"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></com.google.android.material.textfield.TextInputEditText>
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:paddingStart="16dp"
+            android:hint="Enter Email"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,11 +132,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:hint="Enter contact number"
+
         android:id="@+id/boxpass"
         android:layout_below="@+id/textpass"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        android:background="@drawable/square2"
 
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:paddingStart="16dp"
+            android:hint="Enter contact number"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -146,25 +163,21 @@
         android:textColor="@color/black"
         android:fontFamily="@font/robreg"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+    <Spinner
+        android:id="@+id/drop1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/square2"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:id="@+id/boxcountry"
-        android:layout_below="@+id/textcon"
-        android:hint="Select Country">
+        android:minHeight="48dp"
+        android:entries="@array/countries">
 
-         <AutoCompleteTextView
-             android:id="@+id/drop1"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-             android:layout_weight="1"
-             android:inputType="none"
-             android:text=" "/>
-    </com.google.android.material.textfield.TextInputLayout>
+    </Spinner>
 
     <TextView
         android:id="@+id/textcity"
@@ -178,25 +191,21 @@
         android:textColor="@color/black"
         android:fontFamily="@font/robreg"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+    <Spinner
+        android:id="@+id/drop2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/square2"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:id="@+id/boxcity"
-        android:layout_below="@+id/textcon"
-        android:hint="Select City">
+        android:minHeight="48dp"
+        android:entries="@array/cites">
 
-        <AutoCompleteTextView
-            android:id="@+id/drop2"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:inputType="none"
-            android:text=" "/>
-    </com.google.android.material.textfield.TextInputLayout>
+    </Spinner>
 
     <Button
         android:id="@+id/btn"
@@ -204,10 +213,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/drop2"
-        android:layout_alignParentEnd="true"
         android:layout_margin="9dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/round"
@@ -215,6 +223,7 @@
         android:elevation="25dp"
         android:fontFamily="@font/robreg"
         android:text="Sign Up"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="30sp"></Button>
 
