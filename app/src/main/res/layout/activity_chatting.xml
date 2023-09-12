@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chatting">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rel1"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/backarrow"
+
+
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:id="@+id/person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lee John"
+
+        android:textColor="@color/black"
+        android:textSize="30sp"
+
+
+
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"/>
+
+
+
+
+    <ImageView
+        android:id="@+id/phoneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginStart="91dp"
+        android:layout_toEndOf="@id/person"
+        android:src="@drawable/phone" />
+
+    <ImageView
+        android:id="@+id/cameraButton"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/phoneButton"
+        android:src="@drawable/camera" />
+
+</RelativeLayout>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D3D3D3"
+        android:layout_below="@id/rel1"
+        android:layout_marginTop="0dp"/>
+
+
+
+
+<LinearLayout
+    android:id="@+id/lin1"
+    android:layout_below="@+id/line1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rel2"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:padding="8dp">
+
+        <!-- Profile Picture (Left) -->
+        <ImageView
+            android:id="@+id/profilePicture"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/prof"
+            android:contentDescription="Profile Picture" />
+
+        <!-- Message Bubble (Middle) -->
+        <LinearLayout
+            android:id="@+id/messageBubble"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/profilePicture"
+            android:layout_alignTop="@+id/profilePicture"
+            android:layout_alignBottom="@+id/profilePicture"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/square2">
+
+            <!-- Message Text -->
+            <TextView
+                android:id="@+id/messageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello, how are you?"
+                android:padding="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Timestamp (Right Bottom Corner) -->
+        <TextView
+            android:id="@+id/timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:34 PM"
+            android:textSize="12sp"
+            android:layout_alignBottom="@+id/messageBubble"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rel3"
+       android:layout_below="@+id/rel2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+
+
+
+        <LinearLayout
+            android:id="@+id/box2"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/square2"
+            android:backgroundTint="#FFA500">
+
+            <!-- Message Text -->
+            <TextView
+                android:id="@+id/mess2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fine, how about u?"
+                android:padding="12dp"
+
+                android:textSize="16sp" />
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/box2"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="start|bottom"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="4dp"
+            android:text="12:34 PM"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/gline2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            android:background="#CCCCCC" />
+
+        <EditText
+            android:id="@+id/editTextReply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_below="@id/gline2"
+            android:layout_margin="8dp"
+            android:hint="Write a reply..."
+            android:padding="8dp" />
+
+        <!-- Icons -->
+        <LinearLayout
+            android:id="@+id/iconLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextReply"
+
+            android:orientation="horizontal">
+
+            <!-- Icon 1 -->
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/cam" />
+
+            <!-- Icon 2 -->
+            <ImageView
+                android:id="@+id/icon2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/photo" />
+
+            <!-- Icon 3 -->
+            <ImageView
+                android:id="@+id/icon3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/img_2" />
+
+        </LinearLayout>
+
+        <!-- Send Button (Right Corner) -->
+        <TextView
+            android:id="@+id/sendButton"
+            android:layout_width="60dp"
+            android:layout_height="36dp"
+            android:layout_below="@id/editTextReply"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="132dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="25dp"
+            android:layout_toEndOf="@id/iconLayout"
+            android:textColor="#FFA500"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Send" />
+
+    </RelativeLayout>
+</LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
