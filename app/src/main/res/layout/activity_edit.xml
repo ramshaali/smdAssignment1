@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".edit"
+    android:padding="15dp"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+
+                android:layout_alignParentStart="true"
+
+
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/backarrow" />
+
+            <TextView
+                android:id="@+id/emailt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="16dp"
+
+                android:textColor="@color/black"
+                android:text="Edit Profile"
+                android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/savechange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentRight="true"
+
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="28dp"
+                    android:text="Save Changes"
+                    android:textColor="#FFA500"
+                    android:textSize="22sp" />
+
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_below="@id/emailt"
+                android:layout_marginTop="16dp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textLogin"
+                android:text="Name"
+                android:layout_marginTop="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robreg"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+
+                android:id="@+id/boxname"
+                android:background="@drawable/square2"
+
+                android:layout_below="@+id/textname"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lee John"
+                    android:background="#00000000"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/textemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/boxname"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/robreg"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+
+                android:id="@+id/boxemail"
+                android:background="@drawable/square2"
+
+                android:layout_below="@+id/textemail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:paddingStart="16dp"
+                    android:hint="lee@gmail.com"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/textpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/boxemail"
+                android:text="Contact Number"
+                android:layout_marginTop="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robreg"/>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+
+                android:id="@+id/boxpass"
+                android:layout_below="@+id/textpass"
+                android:background="@drawable/square2"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:paddingStart="16dp"
+                    android:hint="5535698"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/textcon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/boxpass"
+                android:text="Country"
+                android:layout_marginTop="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robreg"/>
+
+            <Spinner
+                android:id="@+id/drop1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square2"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:minHeight="48dp"
+                android:entries="@array/countries">
+
+            </Spinner>
+
+            <TextView
+                android:id="@+id/textcity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/boxpass"
+                android:text="City"
+                android:layout_marginTop="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robreg"/>
+
+            <Spinner
+                android:id="@+id/drop2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square2"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:minHeight="48dp"
+                android:entries="@array/cites">
+
+            </Spinner>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".searchresults"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/backarrow"
+
+
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/sr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Results"
+        android:textSize="18sp"
+
+
+
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"/>
+
+    <View
+        android:id="@id/lin1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D3D3D3"
+        android:layout_below="@id/sr"
+        android:layout_marginTop="16dp"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel1"
+        android:layout_below="@id/lin1">
+
+        <TextView
+            android:id="@+id/si"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="30dp"
+             android:textColor="@color/black"
+
+            android:text="Some item"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/drop2"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/si"
+            android:layout_marginLeft="143dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/square2"
+            android:entries="@array/search"
+            android:minHeight="48dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp">
+
+        </Spinner>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@id/lay1"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="-7dp"
+                    android:src="@drawable/square2" />
+
+                <TextView
+                    android:id="@+id/name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Item Name"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_toEndOf="@id/name1"
+                    android:layout_below="@id/img1"
+                    android:text="$10/hr"
+                    android:textColor="#FFA500"
+                    android:textSize="14sp" />
+
+
+
+                <ImageView
+                    android:id="@+id/eyes"
+                    android:layout_below="@id/name1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+
+                    android:src="@drawable/eye" />
+
+                <TextView
+                    android:id="@+id/views"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name1"
+
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginRight="-32dp"
+                    android:text="ISB"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/price"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="4dp"
+
+                    android:layout_toEndOf="@id/views"
+                    android:text="7th Mar"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- for gap -->
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="-7dp"
+                    android:src="@drawable/square2" />
+
+                <TextView
+                    android:id="@+id/name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img2"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Item Name"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/price2"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/name2"
+                    android:layout_below="@id/img2"
+                    android:text="$10/hr"
+                    android:textColor="#FFA500"
+                    android:textSize="14sp" />
+
+
+
+                <ImageView
+                    android:id="@+id/eyes2"
+                    android:layout_below="@id/name2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+
+                    android:src="@drawable/loc" />
+
+                <TextView
+                    android:id="@+id/views2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name2"
+
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginRight="-32dp"
+                    android:text="ISB"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/date2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/price2"
+                    android:text="7th Mar"
+                    android:layout_marginStart="80dp"
+
+                    android:layout_marginTop="4dp"
+                    android:textSize="14sp"
+                    android:layout_toEndOf="@id/views2"
+                    />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@id/lay2"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/lay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/img11"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="-7dp"
+                    android:src="@drawable/square2" />
+
+                <TextView
+                    android:id="@+id/name11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img11"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Item Name"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/price1"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_toEndOf="@id/name11"
+                    android:layout_below="@id/img11"
+                    android:text="$10/hr"
+                    android:textColor="#FFA500"
+                    android:textSize="14sp" />
+
+
+
+                <ImageView
+                    android:id="@+id/eyes1"
+                    android:layout_below="@id/name11"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+
+                    android:src="@drawable/eye" />
+
+                <TextView
+                    android:id="@+id/views1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name11"
+
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginRight="-32dp"
+                    android:text="ISB"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/date1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/price1"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="4dp"
+
+                    android:layout_toEndOf="@id/views1"
+                    android:text="7th Mar"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- for gap -->
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/img21"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="-7dp"
+                    android:src="@drawable/square2" />
+
+                <TextView
+                    android:id="@+id/name21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img21"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Item Name"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/price21"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/name21"
+                    android:layout_below="@id/img21"
+                    android:text="$10/hr"
+                    android:textColor="#FFA500"
+                    android:textSize="14sp" />
+
+
+
+                <ImageView
+                    android:id="@+id/eyes21"
+                    android:layout_below="@id/name21"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="8dp"
+
+                    android:src="@drawable/loc" />
+
+                <TextView
+                    android:id="@+id/views21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name21"
+
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginRight="-32dp"
+                    android:text="ISB"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/date21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/price21"
+                    android:text="7th Mar"
+                    android:layout_marginStart="80dp"
+
+                    android:layout_marginTop="4dp"
+                    android:textSize="14sp"
+                    android:layout_toEndOf="@id/views21"
+                    />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

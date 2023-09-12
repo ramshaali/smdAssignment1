@@ -13,4 +13,10 @@
         <item>Karachi</item>
         <item>Alberta</item>
     </string-array>
+
+    <string-array name="search">
+        <item>Best Match</item>
+        <item>Best Match</item>
+
+    </string-array>
 </resources>

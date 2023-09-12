@@ -126,6 +126,7 @@
 
     <Button
         android:id="@+id/btn"
+        android:background="@drawable/square2"
         android:layout_width="match_parent"
         android:fontFamily="@font/robreg"
         android:layout_height="wrap_content"
