@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".itemdet">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/lin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+       >
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+
+            android:layout_alignParentStart="true"
+
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/backarrow" />
+
+        <TextView
+            android:id="@+id/emailt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="16dp"
+
+            android:textColor="@color/black"
+            android:text="Item"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/rep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentRight="true"
+
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="28dp"
+            android:text="Report"
+            android:textColor="#FFA500"
+            android:textSize="22sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D3D3D3"
+            android:layout_below="@id/emailt"
+            android:layout_marginTop="16dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lin2"
+
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/lin1"
+        android:background="@drawable/square2">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/slide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rel0"
+        android:layout_below="@+id/lin2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/mess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$12"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFA500"
+            android:layout_marginTop="16dp" />
+
+
+        <TextView
+            android:id="@+id/mess2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/mess"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="16dp"
+
+            android:layout_marginRight="-30dp"
+            android:text="/h"
+
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/rel0">
+    <LinearLayout
+        android:id="@+id/linin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Heading -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name of the items come here"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/loc" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Islamabd"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="120dp"
+                android:text="7th, March 2023"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This is a multi-line text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            android:textSize="16sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linin2"
+        android:layout_below="@id/linin"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/prof"
+            android:layout_gravity="end"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lee Doe"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24 items rented"
+               />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/chat"
+            android:layout_gravity="end"
+            android:layout_marginEnd="30dp"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn"
+        android:background="@drawable/square2"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/robreg"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linin2"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="9dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:elevation="25dp"
+        android:text="Rent It"
+        android:textAllCaps="false"
+        android:backgroundTint="#F89820"
+        android:textSize="20sp"
+        android:textColor="@color/white"></Button>
+</RelativeLayout>
+
+
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>
