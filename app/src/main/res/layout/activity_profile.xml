@@ -223,6 +223,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/home"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:contentDescription="Home"
@@ -245,6 +246,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/search"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:contentDescription="Search"
@@ -261,6 +263,7 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/chat"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_gravity="center"

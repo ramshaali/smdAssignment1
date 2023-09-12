@@ -143,6 +143,7 @@
         android:backgroundTint="#F89820"
         android:textSize="20sp"
         android:textColor="@color/white"></Button>
+
     <TextView
         android:id="@+id/textsign"
 
@@ -150,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="64dp"
 
         android:fontFamily="@font/robreg"
         android:text="Sign Up"

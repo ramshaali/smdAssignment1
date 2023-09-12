@@ -182,6 +182,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Home"
+                    android:textColor="#FFA500"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -195,6 +196,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/search"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:contentDescription="Search"
@@ -224,16 +226,17 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/chat"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:contentDescription="Chat"
-                    android:src="@drawable/chato" />
+                    android:src="@drawable/chat" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chat"
-                    android:textColor="#FFA500"
+
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -246,6 +249,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/prof"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:contentDescription="Profile"

@@ -3,11 +3,13 @@ package com.example.assignment1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class signup extends AppCompatActivity {
@@ -23,13 +25,15 @@ public class signup extends AppCompatActivity {
               R.layout.dropdowncon,
               type
         );
-         AutoCompleteTextView autoCompleteTextView=findViewById(R.id.drop1);
-        autoCompleteTextView.setAdapter(adapter);
+        TextView textView = findViewById(R.id.textsign);
 
-        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        textView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText( signup.this, autoCompleteTextView.getText().toString(), Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                // Create an Intent to navigate to TargetActivity
+                Intent intent = new Intent(signup.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -16,7 +16,7 @@
         android:padding="16dp">
     <TextView
 
-        android:id="@+id/chat"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chat"
@@ -227,6 +227,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/home"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:contentDescription="Home"
@@ -249,6 +250,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/search"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:contentDescription="Search"
@@ -278,6 +280,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/chat"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:contentDescription="Chat"
@@ -300,6 +303,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/prof"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:contentDescription="Profile"

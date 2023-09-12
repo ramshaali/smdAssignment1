@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".videocall">
+
+
+    <ImageView
+        android:id="@+id/cam"
+        android:layout_width="match_parent"
+        android:layout_height="640dp"
+        android:background="@drawable/sharp_rectangle"
+        android:backgroundTint="#9E9A9A9A" />
+
+    <LinearLayout
+        android:id="@+id/lin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="20dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/callTimeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00:58"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+
+            android:layout_weight="1" />
+        <ImageView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/rect"
+            android:backgroundTint="#F0FFFFFF"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <View
+
+        android:id="@+id/btn1"
+        android:layout_width="50dp"
+        android:layout_height="4dp"
+        android:background="@drawable/rect"
+        android:backgroundTint="#9E9A9A9A"
+        android:layout_below="@id/cam"
+        android:layout_marginTop="8dp"
+
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/lin2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="-13dp"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/mute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/mute"
+            android:hint="-" />
+
+        <Button
+            android:id="@+id/off"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/camera_off"
+            android:hint="-" />
+
+        <Button
+            android:id="@+id/rev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/callreversecam"
+            android:hint="-" />
+
+        <Button
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_weight="1"
+            android:background="@drawable/end_call"
+            android:hint="-" />
+
+    </LinearLayout>
+
+</RelativeLayout>
