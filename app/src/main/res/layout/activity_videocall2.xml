@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="640dp"
         android:background="@drawable/sharp_rectangle"
-        android:backgroundTint="#9E9A9A9A" />
+        android:backgroundTint="#d3d3d3" />
 
     <LinearLayout
         android:id="@+id/lin1"
@@ -39,7 +39,7 @@
             android:layout_height="150dp"
             android:layout_marginLeft="50dp"
             android:background="@drawable/rect"
-            android:backgroundTint="#F0FFFFFF"
+
             android:layout_weight="1"/>
 
 
@@ -50,12 +50,13 @@
         android:id="@+id/btn1"
         android:layout_width="50dp"
         android:layout_height="4dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/rect"
-        android:backgroundTint="#9E9A9A9A"
+        android:backgroundTint="#6a6a6a"
         android:layout_below="@id/cam"
         android:layout_marginTop="8dp"
 
-        android:layout_centerHorizontal="true"/>
+        />
 
     <LinearLayout
         android:id="@+id/lin2"

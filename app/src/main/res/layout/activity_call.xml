@@ -9,9 +9,9 @@
     <ImageView
         android:id="@+id/cam"
         android:layout_width="match_parent"
-        android:layout_height="590dp"
+        android:layout_height="550dp"
         android:background="@drawable/sharp_rectangle"
-        android:backgroundTint="#9E9A9A9A"/>
+        android:backgroundTint="#d3d3d3"/>
 
     <LinearLayout
         android:id="@+id/lin1"
@@ -47,15 +47,17 @@
 
     </LinearLayout>
 
-    <Button
+    <View
+        android:hint="-"
         android:id="@+id/btn1"
         android:layout_width="50dp"
         android:layout_height="4dp"
         android:background="@drawable/rect"
-        android:backgroundTint="#9E9A9A9A"
+        android:backgroundTint="#6a6a6a"
+        android:layout_centerHorizontal="true"
         android:layout_below="@id/cam"
-        android:layout_marginTop="8dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="12dp"
+        />
 
     <LinearLayout
         android:id="@+id/lin2"
@@ -71,23 +73,25 @@
             android:id="@+id/lin3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_weight="1"
             android:orientation="horizontal"
             android:padding="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:weightSum="3">
 
             <Button
+                android:hint="-"
                 android:id="@+id/mute"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
-                android:background="@drawable/mute"/>
+                android:background="@drawable/mute" />
 
             <Button
+                android:hint="-"
                 android:id="@+id/speaker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -97,17 +101,19 @@
                 android:background="@drawable/speaker" />
 
             <Button
+                android:hint="-"
                 android:id="@+id/pause"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
-                android:background="@drawable/pause"/>
+                android:background="@drawable/pause" />
 
         </LinearLayout>
 
         <Button
+            android:hint="-"
             android:id="@+id/end"
             android:layout_width="55dp"
             android:layout_height="55dp"

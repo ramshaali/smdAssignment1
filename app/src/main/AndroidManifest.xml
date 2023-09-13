@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Assignment1"
         tools:targetApi="31">
         <activity
+            android:name=".dashboard"
+            android:exported="false" />
+        <activity
             android:name=".itemdet"
             android:exported="false" />
         <activity
@@ -52,7 +55,7 @@
             android:name=".chat"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".logoscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,7 +73,7 @@
             android:name=".forgotpass"
             android:exported="false" />
         <activity
-            android:name=".dashboard"
+            android:name=".LoginActivity"
             android:exported="false" />
     </application>
 

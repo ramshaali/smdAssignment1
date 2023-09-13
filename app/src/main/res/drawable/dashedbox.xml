@@ -3,7 +3,7 @@
     <!-- Solid white background -->
     <item android:drawable="@android:color/transparent" />
 
-    <!-- Dashed border -->
+
     <item
         android:left="5dp"
         android:right="5dp"

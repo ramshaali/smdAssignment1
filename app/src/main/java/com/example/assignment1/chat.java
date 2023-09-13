@@ -43,5 +43,16 @@ public class chat extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageView imageView4= findViewById(R.id.go);
+
+        imageView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to navigate to TargetActivity
+                Intent intent = new Intent(chat.this, chatting.class);
+                startActivity(intent);
+            }
+        });
     }
 }

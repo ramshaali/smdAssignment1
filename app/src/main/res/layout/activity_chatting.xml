@@ -12,7 +12,7 @@
     android:padding="16dp">
 
     <ImageView
-        android:id="@+id/backButton"
+        android:id="@+id/back"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:src="@drawable/backarrow"
@@ -90,7 +90,6 @@
             android:src="@drawable/prof"
             android:contentDescription="Profile Picture" />
 
-        <!-- Message Bubble (Middle) -->
         <LinearLayout
             android:id="@+id/messageBubble"
             android:layout_width="280dp"
@@ -185,13 +184,13 @@
         <EditText
             android:id="@+id/editTextReply"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
              android:layout_below="@id/gline2"
             android:layout_margin="8dp"
             android:hint="Write a reply..."
             android:padding="8dp" />
 
-        <!-- Icons -->
+
         <LinearLayout
             android:id="@+id/iconLayout"
             android:layout_width="wrap_content"

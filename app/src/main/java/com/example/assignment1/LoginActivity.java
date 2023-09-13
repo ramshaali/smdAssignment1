@@ -35,5 +35,18 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        Button button = findViewById(R.id.btn);
+
+        // Set an OnClickListener for the button
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to navigate to NextActivity
+                Intent intent = new Intent(LoginActivity.this, dashboard.class);
+                startActivity(intent);
+            }
+        });
     }
 }

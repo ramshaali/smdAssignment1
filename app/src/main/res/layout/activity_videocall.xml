@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="590dp"
             android:background="@drawable/sharp_rectangle"
-            android:backgroundTint="#9E9A9A9A"/>
+            android:backgroundTint="#d3d3d3"/>
 
         <LinearLayout
             android:id="@+id/lin1"
