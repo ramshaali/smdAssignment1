@@ -1,3 +1,4 @@
+
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -35,7 +36,7 @@
             android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="220dp"
+            android:layout_marginStart="105dp"
             android:layout_toEndOf="@id/itemName"
             android:layout_below="@id/itemImage"
             android:text="$10/hr"
@@ -70,13 +71,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/price"
-            android:text="7th Mar"
-            android:layout_marginStart="260dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="2dp"
 
-            android:layout_marginTop="4dp"
-            android:textSize="14sp"
             android:layout_toEndOf="@id/views"
-           />
+            android:text="7th Mar"
+            android:textSize="14sp" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

@@ -242,23 +242,22 @@
 
     <Button
         android:id="@+id/btn"
-        android:background="@drawable/square2"
         android:layout_width="match_parent"
-        android:fontFamily="@font/robreg"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linin2"
         android:layout_alignParentEnd="true"
-        android:layout_margin="9dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/square2"
+        android:backgroundTint="#F89820"
         android:elevation="25dp"
+        android:fontFamily="@font/robreg"
         android:text="Rent It"
         android:textAllCaps="false"
-        android:backgroundTint="#F89820"
-        android:textSize="20sp"
-        android:textColor="@color/white"></Button>
+        android:textColor="@color/white"
+        android:textSize="20sp"></Button>
 </RelativeLayout>
 
 

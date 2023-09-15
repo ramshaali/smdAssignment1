@@ -10,7 +10,8 @@
 
 <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+  >
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -60,7 +61,7 @@
 
         android:layout_below="@+id/textname"
 
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -96,7 +97,7 @@
         android:background="@drawable/square2"
 
         android:layout_below="@+id/textemail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+       >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -137,7 +138,7 @@
         android:layout_below="@+id/textpass"
         android:background="@drawable/square2"
 
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -172,6 +173,7 @@
         android:paddingEnd="16dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
+        android:spinnerMode="dropdown"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
         android:minHeight="48dp"
@@ -202,6 +204,7 @@
         android:paddingBottom="8dp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
+        android:spinnerMode="dropdown"
         android:minHeight="48dp"
         android:entries="@array/cites">
 

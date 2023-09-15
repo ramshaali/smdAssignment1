@@ -22,6 +22,7 @@ public class dashboard extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.chat);
         ImageView imageView2 = findViewById(R.id.prof);
         ImageView imageView3 = findViewById(R.id.search);
+        ImageView imageView4 = findViewById(R.id.plus);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +50,15 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
+
+        imageView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to navigate to TargetActivity
+                Intent intent = new Intent(dashboard.this, enteritem.class);
+                startActivity(intent);
+            }
+        });
         RecyclerView recyclerView1 = findViewById(R.id.rv1);
         RecyclerView recyclerView2 = findViewById(R.id.rv2);
         RecyclerView recyclerView3 = findViewById(R.id.rv3);

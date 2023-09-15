@@ -92,26 +92,27 @@
 
         <LinearLayout
             android:id="@+id/messageBubble"
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/profilePicture"
+            android:layout_width="245dp"
+            android:layout_height="46dp"
             android:layout_alignTop="@+id/profilePicture"
             android:layout_alignBottom="@+id/profilePicture"
-            android:orientation="vertical"
             android:layout_marginStart="8dp"
-            android:background="@drawable/square2">
+            android:layout_marginBottom="2dp"
+            android:layout_toEndOf="@+id/profilePicture"
+            android:background="@drawable/square2"
+            android:orientation="vertical">
 
-            <!-- Message Text -->
+
             <TextView
                 android:id="@+id/messageText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hello, how are you?"
                 android:padding="12dp"
+                android:text="Hello, how are you?"
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- Timestamp (Right Bottom Corner) -->
+
         <TextView
             android:id="@+id/timestamp"
             android:layout_width="wrap_content"
@@ -164,6 +165,7 @@
             android:layout_alignBottom="@+id/box2"
             android:layout_alignParentStart="true"
             android:layout_gravity="start|bottom"
+            android:layout_marginStart="36dp"
             android:layout_marginLeft="50dp"
             android:layout_marginBottom="4dp"
             android:text="12:34 PM"

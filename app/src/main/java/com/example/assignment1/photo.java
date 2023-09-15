@@ -25,5 +25,17 @@ public class photo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button button2 = findViewById(R.id.butex);
+
+        // Set an OnClickListener for the button
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to navigate to NextActivity
+                Intent intent = new Intent(photo.this, enteritem.class);
+                startActivity(intent);
+            }
+        });
     }
 }

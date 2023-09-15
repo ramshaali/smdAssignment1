@@ -145,9 +145,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginTop="650dp"
-        >
+        android:orientation="vertical">
 
         <View
             android:layout_width="match_parent"
@@ -156,7 +155,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="82dp"
             android:layout_below="@+id/upper"
             android:background="#FFFFFF"
 
@@ -187,7 +186,6 @@
             </LinearLayout>
 
 
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -213,11 +211,13 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/plus"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_gravity="center"
                 android:contentDescription="Add"
                 android:src="@drawable/plus" />
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

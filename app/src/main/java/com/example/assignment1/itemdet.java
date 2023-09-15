@@ -6,6 +6,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ public class itemdet extends AppCompatActivity {
         setContentView(R.layout.activity_itemdet);
 
 
-        List<Integer> img = new ArrayList<>();
+      /*  List<Integer> img = new ArrayList<>();
         img.add(R.drawable.square2);
         img.add(R.drawable.square2);
 
@@ -27,7 +29,7 @@ public class itemdet extends AppCompatActivity {
 
         ViewPager2 data = findViewById(R.id.slide);
        imageslideradap slideAdapter = new imageslideradap(img);
-       data.setAdapter(slideAdapter);
+       data.setAdapter(slideAdapter);*/
 
         TextView textView = findViewById(R.id.rep);
 
@@ -37,6 +39,19 @@ public class itemdet extends AppCompatActivity {
             public void onClick(View v) {
                 // Create an Intent to navigate to TargetActivity
                 Intent intent = new Intent(itemdet.this, Report.class);
+                startActivity(intent);
+            }
+        });
+
+
+        Button button = findViewById(R.id.btn);
+
+        // Set an OnClickListener for the button
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to navigate to NextActivity
+                Intent intent = new Intent(itemdet.this, dashboard.class);
                 startActivity(intent);
             }
         });

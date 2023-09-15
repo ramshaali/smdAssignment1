@@ -2,9 +2,12 @@ package com.example.assignment1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -46,6 +49,18 @@ public class search extends AppCompatActivity {
 
         // Set the adapter for the ListView
         searchResultsListView.setAdapter(searchResultsAdapter);
+
+        searchResultsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Check if the clicked item is not a heading
+                if (position > 0) {
+                    // Start the NextActivity
+                    Intent intent = new Intent(search.this, searchresults.class);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     public void onSearchBarClick(View view) {
@@ -55,4 +70,8 @@ public class search extends AppCompatActivity {
             searchResultsListView.setVisibility(View.GONE); // Hide the ListView
         }
     }
+
+
+
+
 }

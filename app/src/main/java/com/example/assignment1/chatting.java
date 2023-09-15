@@ -38,7 +38,7 @@ public class chatting extends AppCompatActivity {
 
         ImageView imageView4 = findViewById(R.id.back);
 
-        imageView.setOnClickListener(new View.OnClickListener() {
+        imageView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Create an Intent to navigate to TargetActivity
