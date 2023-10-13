@@ -64,6 +64,7 @@
             android:layout_marginLeft="143dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/square2"
+            android:spinnerMode="dropdown"
             android:entries="@array/search"
             android:minHeight="48dp"
             android:paddingStart="16dp"
@@ -76,7 +77,17 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rel1"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+
+   <!-- <LinearLayout
         android:id="@id/lay1"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/rel1"
@@ -166,7 +177,7 @@
         </androidx.cardview.widget.CardView>
 
 
-        <!-- for gap -->
+
         <View
             android:layout_width="8dp"
             android:layout_height="match_parent" />
@@ -351,7 +362,7 @@
         </androidx.cardview.widget.CardView>
 
 
-        <!-- for gap -->
+
         <View
             android:layout_width="8dp"
             android:layout_height="match_parent" />
@@ -443,7 +454,7 @@
 
 
 
-    </LinearLayout>
+    </LinearLayout> -->
 
 
 </RelativeLayout>

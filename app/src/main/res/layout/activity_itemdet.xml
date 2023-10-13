@@ -13,57 +13,70 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/lin1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-       >
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-
-            android:layout_alignParentStart="true"
-
-
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/backarrow" />
-
-        <TextView
-            android:id="@+id/emailt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="16dp"
-
-            android:textColor="@color/black"
-            android:text="Item"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/rep"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_alignParentRight="true"
-
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="28dp"
-            android:text="Report"
-            android:textColor="#FFA500"
-            android:textSize="22sp" />
-
-        <View
+        <RelativeLayout
+            android:id="@+id/lin1"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#D3D3D3"
-            android:layout_below="@id/emailt"
-            android:layout_marginTop="16dp"/>
-    </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
-    <RelativeLayout
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+
+                android:layout_alignParentStart="true"
+
+
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/backarrow" />
+
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+
+                android:layout_alignParentright="true"
+                android:onClick="deletebuttonclick"
+
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="19dp"
+                android:src="@drawable/delete" /
+
+            <TextView
+                android:id="@+id/emailt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="16dp"
+
+                android:text="Item"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/rep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentRight="true"
+
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="28dp"
+                android:text="Report"
+                android:textColor="#FFA500"
+                android:textSize="22sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/emailt"
+                android:layout_marginTop="16dp"
+                android:background="#D3D3D3" />
+        </RelativeLayout>
+
+        <RelativeLayout
         android:id="@+id/lin2"
 
         android:layout_width="match_parent"
@@ -71,7 +84,7 @@
         android:layout_below="@id/lin1"
         android:background="@drawable/square2">
 
-        <androidx.viewpager2.widget.ViewPager2
+        <ImageView
             android:id="@+id/slide"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -93,7 +106,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/mess"
+            android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="$12"
@@ -107,7 +120,7 @@
             android:id="@+id/mess2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@id/mess"
+            android:layout_alignRight="@id/price"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="16dp"
 
@@ -132,6 +145,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name of the items come here"
+            android:id="@+id/name"
             android:textSize="24sp"
             android:textStyle="bold"
             android:paddingStart="16dp"
@@ -159,7 +173,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Islamabd"
+                android:text="Islamabad"
                 android:textSize="16sp"
                 android:layout_marginStart="8dp" />
 
@@ -171,6 +185,7 @@
                 android:layout_marginLeft="120dp"
                 android:text="7th, March 2023"
                 android:textSize="16sp"
+                android:id="@+id/date"
                 />
 
         </LinearLayout>

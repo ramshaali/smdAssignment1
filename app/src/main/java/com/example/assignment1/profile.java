@@ -5,6 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,6 +26,7 @@ public class profile extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.home);
         ImageView imageView2 = findViewById(R.id.chat);
         ImageView imageView3 = findViewById(R.id.search);
+        ImageView imageView4 = findViewById(R.id.icon);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +54,15 @@ public class profile extends AppCompatActivity {
             }
         });
 
+        imageView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to navigate to TargetActivity
+                Intent intent = new Intent(profile.this, edit.class);
+                startActivity(intent);
+            }
+        });
+
         RecyclerView recyclerView = findViewById(R.id.rv1);
         RecyclerView recyclerView2 = findViewById(R.id.rv2);
 
@@ -67,14 +80,16 @@ public class profile extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView2.setLayoutManager(layoutManager2);
 
-
+        //Drawable drawable=getResources().getDrawable(R.drawable.baseline_arrow_forward_24);
+        //BitmapDrawable bitdrawable=(BitmapDrawable) drawable;
+       // Bitmap bitmap=bitdrawable.getBitmap();
         List<itemcard> itemList = new ArrayList<>();
-        itemList.add(new itemcard(R.drawable.square2, "Item 1", "$10/hr", 1000, "7th Mar"));
-        itemList.add(new itemcard(R.drawable.square2, "Item 2", "$10/hr", 750, "6th Mar"));
+        //itemList.add(new itemcard(bitmap, "Item 1", "$10/hr", 1000, "7th Mar"));
+       // itemList.add(new itemcard(bitmap, "Item 2", "$10/hr", 750, "6th Mar"));
 
         List<itemcard> itemList3 = new ArrayList<>();
-        itemList3.add(new itemcard(R.drawable.square2, "Item 5", "$15/hr", 1500, "10th Mar"));
-        itemList3.add(new itemcard(R.drawable.square2, "Item 6", "$9/hr", 600, "11th Mar"));
+        //itemList3.add(new itemcard(bitmap, "Item 5", "$15/hr", 1500, "10th Mar"));
+        //itemList3.add(new itemcard(bitmap, "Item 6", "$9/hr", 600, "11th Mar"));
 
         recycleadapter adapter2 = new recycleadapter(itemList3);
         recyclerView2.setAdapter(adapter2);

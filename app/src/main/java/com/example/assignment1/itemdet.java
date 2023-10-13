@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,5 +58,33 @@ public class itemdet extends AppCompatActivity {
         });
 
 
+      TextView name= findViewById(R.id.name);
+      TextView price=findViewById(R.id.price);
+      ImageView img= findViewById(R.id.slide);
+      TextView date= findViewById(R.id.date);
+      name.setText(getIntent().getStringExtra("name"));
+      date.setText(getIntent().getStringExtra("date"));
+      price.setText(getIntent().getStringExtra("price"));
+      Bitmap receivedBitmap = getIntent().getParcelableExtra("img");
+      img.setImageBitmap(receivedBitmap);
+
+
+
+
+
+    }
+    public void deletebuttonclick(View view) {
+        // Get the position of the currently displayed item
+        int positionToDelete = getIntent().getIntExtra("positionToDelete", -1);
+
+        if (positionToDelete != -1) {
+            // Create an intent to send back the deleted item position
+            Intent intent = new Intent();
+            intent.putExtra("positionToDelete", positionToDelete);
+            setResult(RESULT_OK, intent);
+
+            // Finish the activity to return to the previous one
+            finish();
+        }
     }
 }

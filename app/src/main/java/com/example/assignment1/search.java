@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,6 +22,11 @@ public class search extends AppCompatActivity {
     private TextView recent;
     private TextView popular;
 
+    ImageView imgsearch;
+    EditText search;
+
+    private List<itemcard> itemList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +34,9 @@ public class search extends AppCompatActivity {
 
 
         searchResultsListView = findViewById(R.id.searchResultsListView);
+        imgsearch=findViewById(R.id.imgsearch);
+        search= findViewById(R.id.search);
+
 
 
         // Create mock data for recent and popular searches
@@ -61,6 +71,13 @@ public class search extends AppCompatActivity {
                 }
             }
         });
+        imgsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                performSearch();
+            }
+        });
+
     }
 
     public void onSearchBarClick(View view) {
@@ -71,7 +88,28 @@ public class search extends AppCompatActivity {
         }
     }
 
+    private void performSearch() {
+        String query = search.getText().toString().toLowerCase();
+
+        // Filter the item list based on the search query
+        List<itemcard> filteredList = filterItemList(query);
+
+        Intent intent = new Intent(this, searchresults.class);
+        intent.putParcelableArrayListExtra("filteredItems", (ArrayList<? extends Parcelable>) new ArrayList<itemcard>(filteredList));
+        startActivity(intent);
 
 
+    }
 
+    private List<itemcard> filterItemList(String query) {
+        List<itemcard> filteredList = new ArrayList<>();
+        for (itemcard item : itemList) {
+            if (item.getName().toLowerCase().contains(query)) {
+                filteredList.add(item);
+            }
+        }
+        return filteredList;
+    }
 }
+
+

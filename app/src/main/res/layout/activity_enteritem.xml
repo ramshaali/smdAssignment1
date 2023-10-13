@@ -82,6 +82,7 @@
               android:src="@drawable/camo" />
 
           <TextView
+              android:id="@+id/gallery"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_gravity="center"
@@ -145,16 +146,17 @@
         android:layout_below="@+id/textname"
 
         >
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Lee John"
+            android:id="@+id/name"
             android:background="#00000000"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
+            android:minHeight="48dp"></EditText>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -188,6 +190,7 @@
             android:paddingStart="16dp"
             android:hint="Enter Hourly Rate"
             android:paddingEnd="16dp"
+            android:id="@+id/rate"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
@@ -227,6 +230,7 @@
             android:paddingStart="16dp"
             android:hint="Enter Description"
             android:paddingEnd="16dp"
+            android:id="@+id/desc"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>

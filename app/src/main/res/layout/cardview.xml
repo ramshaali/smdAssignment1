@@ -11,6 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/row"
         >
 
         <ImageView
@@ -21,36 +22,35 @@
             android:layout_marginStart="-7dp"
             android:src="@drawable/square2" />
 
+
         <TextView
             android:id="@+id/itemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/itemImage"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="1dp"
             android:text="Item Name"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/price"
-            android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="105dp"
-            android:layout_toEndOf="@id/itemName"
             android:layout_below="@id/itemImage"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/itemName"
             android:text="$10/hr"
             android:textColor="#FFA500"
             android:textSize="14sp" />
-
-
 
         <ImageView
             android:id="@+id/eyes"
             android:layout_below="@id/itemName"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="23dp"
 
             android:src="@drawable/eye" />
 
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/itemName"
 
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="-1dp"
             android:layout_marginRight="-32dp"
             android:text="Views"
@@ -71,8 +71,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/price"
-            android:layout_marginStart="105dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="0dp"
 
             android:layout_toEndOf="@id/views"
             android:text="7th Mar"
