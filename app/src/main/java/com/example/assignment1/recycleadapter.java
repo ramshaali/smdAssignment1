@@ -2,6 +2,7 @@ package com.example.assignment1;
 
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -13,19 +14,24 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
         import androidx.annotation.NonNull;
         import androidx.recyclerview.widget.RecyclerView;
-        import java.util.List;
+
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 
 public class recycleadapter extends RecyclerView.Adapter<recycleadapter.ItemViewHolder> {
 
     private List<itemcard> itemList;
 
-    Context context;
+    private  Context context;
 
 
-    public recycleadapter(List<itemcard> itemList) {
+    public recycleadapter(List<itemcard> itemList, Context context) {
         this.itemList = itemList;
+        this.context = context;
     }
+
 
     @NonNull
     @Override
@@ -35,10 +41,15 @@ public class recycleadapter extends RecyclerView.Adapter<recycleadapter.ItemView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, @SuppressLint("RecyclerView") int position) {
         itemcard item = itemList.get(position);
 
-        holder.itemImage.setImageBitmap(item.getImg());
+        String imageUrl = item.getImg();
+
+// Assuming holder.itemImage is the ImageView where you want to load the image
+
+// Use Picasso to load the image into the ImageView
+        Picasso.get().load(imageUrl).into(holder.itemImage);
         holder.itemName.setText(item.getName());
         holder.price.setText(item.getPrice());
         holder.views.setText(String.valueOf(item.getViews()));

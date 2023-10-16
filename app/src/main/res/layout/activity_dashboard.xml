@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/dash"
     tools:context=".dashboard">
     <ScrollView
         android:layout_width="match_parent"
@@ -12,72 +13,84 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-    <RelativeLayout
-        android:id="@+id/rel0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
-
-    <TextView
-        android:id="@+id/mess"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome,"
-        android:textSize="24sp"
 
 
-        android:layout_marginTop="16dp" />
+            <RelativeLayout
+                android:id="@+id/rel0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/mess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Welcome,"
 
 
-        <TextView
-            android:id="@+id/mess2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@id/mess"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="16dp"
-
-            android:layout_marginRight="-64dp"
-            android:text="Daud"
-            android:textColor="#FFA500"
-            android:textSize="24sp" />
-    </RelativeLayout>
+                    android:textSize="24sp" />
 
 
+                <TextView
+                    android:id="@+id/mess2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/mess"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="16dp"
 
-       <RelativeLayout
-           android:layout_below="@id/rel0"
-           android:id="@id/rel1"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:padding="16dp">
-
-
-           <TextView
-            android:id="@+id/features"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Featured Items"
-            android:textSize="18sp"
-               android:textColor="@color/black"
+                    android:layout_marginRight="-64dp"
+                    android:text="Ramsha"
+                    android:textColor="#FFA500"
+                    android:textSize="24sp" />
 
 
-            android:layout_marginTop="16dp" />
+                <TextView
+                    android:id="@+id/logout"
+                    android:layout_width="87dp"
+                    android:layout_height="53dp"
+                    android:layout_alignRight="@id/mess2"
+                    android:layout_marginLeft="200dp"
+                      android:layout_marginTop="20dp"
+                    android:layout_marginRight="-208dp"
+                    android:text="Logout"
+                    android:textColor="@color/black"
+                    android:textSize="19sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@id/rel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rel0"
+                android:padding="16dp">
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/features"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
-
-       </RelativeLayout>
+                <TextView
+                    android:id="@+id/features"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Featured Items"
+                    android:textColor="@color/black"
 
 
-    <RelativeLayout
+                    android:textSize="18sp" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/features"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
         android:id="@id/rel2"
         android:layout_below="@id/rel1"
         android:layout_width="match_parent"

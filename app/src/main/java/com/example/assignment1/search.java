@@ -23,6 +23,7 @@ public class search extends AppCompatActivity {
     private TextView popular;
 
     ImageView imgsearch;
+    List<itemcard> filteredList = new ArrayList<>();
     EditText search;
 
     private List<itemcard> itemList;
@@ -32,7 +33,7 @@ public class search extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-
+        itemList = getIntent().getParcelableArrayListExtra("itemList");
         searchResultsListView = findViewById(R.id.searchResultsListView);
         imgsearch=findViewById(R.id.imgsearch);
         search= findViewById(R.id.search);
@@ -74,9 +75,11 @@ public class search extends AppCompatActivity {
         imgsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                performSearch();
+               performSearch();
+
             }
         });
+
 
     }
 
@@ -110,6 +113,8 @@ public class search extends AppCompatActivity {
         }
         return filteredList;
     }
+
+
 }
 
 

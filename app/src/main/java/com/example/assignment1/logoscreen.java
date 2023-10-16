@@ -27,5 +27,6 @@ public class logoscreen extends AppCompatActivity {
         }, time);
 
 
+
     }
 }

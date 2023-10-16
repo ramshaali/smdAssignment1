@@ -86,5 +86,6 @@ public class entercode extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

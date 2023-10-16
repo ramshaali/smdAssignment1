@@ -13,6 +13,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +26,7 @@ public class dashboard extends AppCompatActivity {
     RecyclerView recyclerView2;
 
     List<itemcard> itemList1;
+    FirebaseAuth mAuth;
     List<itemcard> itemList2;
 
     recycleadapter adapter1;
@@ -36,6 +41,17 @@ public class dashboard extends AppCompatActivity {
         ImageView imageView2 = findViewById(R.id.prof);
         ImageView imageView3 = findViewById(R.id.search);
         ImageView imageView4 = findViewById(R.id.plus);
+        TextView logout = findViewById(R.id.logout);
+        mAuth = FirebaseAuth.getInstance();
+
+
+
+        logout.setOnClickListener(view -> {
+            mAuth.signOut();
+            startActivity(new Intent(dashboard.this, LoginActivity.class));
+
+
+        });
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +66,7 @@ public class dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 // Create an Intent to navigate to TargetActivity
                 Intent intent = new Intent(dashboard.this, profile.class);
+                intent.putParcelableArrayListExtra("itemList", new ArrayList<>(itemList1));
                 startActivity(intent);
             }
         });
@@ -59,9 +76,15 @@ public class dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 // Create an Intent to navigate to TargetActivity
                 Intent intent = new Intent(dashboard.this, search.class);
+                // Pass the list of itemcards to the SearchResultsActivity
+                intent.putParcelableArrayListExtra("itemList", new ArrayList<>(itemList1));
+
                 startActivity(intent);
+
             }
         });
+
+
 
 
         imageView4.setOnClickListener(new View.OnClickListener() {
@@ -91,8 +114,10 @@ public class dashboard extends AppCompatActivity {
         //BitmapDrawable bitdrawable=(BitmapDrawable) drawable;
         //Bitmap bitmap=bitdrawable.getBitmap();
          itemList1 = new ArrayList<>();
-        //itemList1.add(new itemcard(bitmap, "Item 1", "$10/hr", 1000, "7th Mar"));
-        //itemList1.add(new itemcard(bitmap, "Item 2", "$10/hr", 750, "6th Mar"));
+        String imageUrl = "android.resource://com.example.assignment1/" + R.drawable.camera;
+
+        itemList1.add(new itemcard(imageUrl, "Camera", "$10", 1000, "7th Mar"));
+        itemList1.add(new itemcard(imageUrl, "Chair", "$10", 750, "6th Mar"));
 
          itemList2 = new ArrayList<>();
         //itemList2.add(new itemcard(bitmap, "Item 3", "$12/hr", 1200, "8th Mar"));
@@ -102,36 +127,47 @@ public class dashboard extends AppCompatActivity {
         //itemList3.add(new itemcard(bitmap, "Item 5", "$15/hr", 1500, "10th Mar"));
         //itemList3.add(new itemcard(bitmap, "Item 6", "$9/hr", 600, "11th Mar"));
 
-         adapter1 = new recycleadapter(itemList1);
+         adapter1 = new recycleadapter(itemList1, this);
         recyclerView1.setAdapter(adapter1);
 
-         adapter2 = new recycleadapter(itemList2);
-        recyclerView2.setAdapter(adapter2);
+       //  adapter2 = new recycleadapter(itemList2, this);
+       // recyclerView2.setAdapter(adapter2);
 
-        recycleadapter adapter3 = new recycleadapter(itemList3);
-        recyclerView3.setAdapter(adapter3);
+        //recycleadapter adapter3 = new recycleadapter(itemList3, this);
+       // recyclerView3.setAdapter(adapter3);
 
 
 
     }
 
+
+    @Override
+    protected void onStart( ){
+        super.onStart();
+
+        FirebaseUser user=mAuth.getCurrentUser();
+        if(user==null){
+            startActivity(new Intent(dashboard.this, LoginActivity.class));
+        }
+
+    }
     @Override
     protected  void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode==1 && resultCode==RESULT_OK &&data!=null){
-            byte[] byteArray = getIntent().getByteArrayExtra("img");
-            Bitmap imgbitmap= BitmapFactory.decodeByteArray(byteArray,0, byteArray.length);
+            //byte[] byteArray = getIntent().getByteArrayExtra("img");
+            Bitmap imgbitmap= null; //BitmapFactory.decodeByteArray(byteArray,0, byteArray.length);
             // Extract the item details from the data received from 'enteritem' activity
-
+            String Url=data.getStringExtra("img");
             String name = data.getStringExtra("name");
             String price = data.getStringExtra("price");
             int views = data.getIntExtra("views", 0);
             String date = data.getStringExtra("date");
 
 
-            itemcard newItem = new itemcard(imgbitmap, name, price, views, date);
+            itemcard newItem = new itemcard(Url, name, price, views, date);
 
 
            itemList1.add(newItem);
@@ -139,7 +175,7 @@ public class dashboard extends AppCompatActivity {
 
 
             recyclerView1.getAdapter().notifyDataSetChanged();
-            recyclerView2.getAdapter().notifyDataSetChanged();
+            //recyclerView2.getAdapter().notifyDataSetChanged();
         }else   if (requestCode == ITEM_DETAIL_REQUEST && resultCode == RESULT_OK) {
             int positionToDelete = data.getIntExtra("positionToDelete", -1);
 
@@ -150,8 +186,10 @@ public class dashboard extends AppCompatActivity {
 
                 // Notify the adapter that the dataset has changed
                 adapter1.notifyItemRemoved(positionToDelete);
-                adapter2.notifyItemRemoved(positionToDelete);
+                //adapter2.notifyItemRemoved(positionToDelete);
             }
         }
     }
+
+
 }

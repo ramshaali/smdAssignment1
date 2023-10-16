@@ -183,7 +183,7 @@
 
         android:layout_below="@+id/textemail"
        >
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#00000000"
@@ -193,7 +193,7 @@
             android:id="@+id/rate"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
+            android:minHeight="48dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -223,7 +223,7 @@
         android:layout_below="@+id/textpass"
         android:background="@drawable/square2"
 >
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#00000000"
@@ -233,7 +233,7 @@
             android:id="@+id/desc"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
+            android:minHeight="48dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 

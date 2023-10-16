@@ -9,13 +9,13 @@ import androidx.annotation.NonNull;
 public class itemcard implements Parcelable {
 
 
-    private Bitmap img;
+    private String img;
     private String name;
     private String price;
     private int views;
     private String date;
 
-    public itemcard(Bitmap img, String name, String price, int views, String date) {
+    public itemcard(String img, String name, String price, int views, String date) {
         this.img = img;
         this.name = name;
         this.price = price;
@@ -24,7 +24,8 @@ public class itemcard implements Parcelable {
     }
 
     protected itemcard(Parcel in) {
-        img = in.readParcelable(Bitmap.class.getClassLoader());
+        //img = in.readParcelable(Bitmap.class.getClassLoader());
+        img=in.readString();
         name = in.readString();
         price = in.readString();
         views = in.readInt();
@@ -43,11 +44,11 @@ public class itemcard implements Parcelable {
         }
     };
 
-    public Bitmap getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(Bitmap img) {
+    public void setImg(String img) {
         this.img = img;
     }
 
@@ -90,7 +91,9 @@ public class itemcard implements Parcelable {
 
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int i) {
-        parcel.writeParcelable(img, i);
+        //parcel.writeParcelable(img, i);
+        parcel.writeString(img);
+
         parcel.writeString(name);
         parcel.writeString(price);
         parcel.writeInt(views);

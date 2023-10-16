@@ -33,16 +33,16 @@
 
 
             <ImageView
-                android:id="@+id/delete"
+                android:id="@+id/del"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
 
-                android:layout_alignParentright="true"
-                android:onClick="deletebuttonclick"
 
-                android:layout_marginStart="250dp"
+
+
+                android:layout_marginStart="243dp"
                 android:layout_marginTop="19dp"
-                android:src="@drawable/delete" /
+                android:src="@drawable/delete" />
 
             <TextView
                 android:id="@+id/emailt"

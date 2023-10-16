@@ -27,6 +27,10 @@ public class profile extends AppCompatActivity {
         ImageView imageView2 = findViewById(R.id.chat);
         ImageView imageView3 = findViewById(R.id.search);
         ImageView imageView4 = findViewById(R.id.icon);
+        List<itemcard> itemList = new ArrayList<>();
+
+        itemList = getIntent().getParcelableArrayListExtra("itemList");
+
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +62,7 @@ public class profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent to navigate to TargetActivity
-                Intent intent = new Intent(profile.this, edit.class);
+                Intent intent = new Intent(profile.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -80,22 +84,18 @@ public class profile extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView2.setLayoutManager(layoutManager2);
 
-        //Drawable drawable=getResources().getDrawable(R.drawable.baseline_arrow_forward_24);
-        //BitmapDrawable bitdrawable=(BitmapDrawable) drawable;
-       // Bitmap bitmap=bitdrawable.getBitmap();
-        List<itemcard> itemList = new ArrayList<>();
-        //itemList.add(new itemcard(bitmap, "Item 1", "$10/hr", 1000, "7th Mar"));
-       // itemList.add(new itemcard(bitmap, "Item 2", "$10/hr", 750, "6th Mar"));
+
 
         List<itemcard> itemList3 = new ArrayList<>();
         //itemList3.add(new itemcard(bitmap, "Item 5", "$15/hr", 1500, "10th Mar"));
         //itemList3.add(new itemcard(bitmap, "Item 6", "$9/hr", 600, "11th Mar"));
 
-        recycleadapter adapter2 = new recycleadapter(itemList3);
+        recycleadapter adapter2 = new recycleadapter(itemList, this);
         recyclerView2.setAdapter(adapter2);
-        adapter = new recycleadapter(itemList);
+        adapter = new recycleadapter(itemList, this);
         recyclerView.setAdapter(adapter);
         recyclerView2.setAdapter(adapter);
+
 
     }
 

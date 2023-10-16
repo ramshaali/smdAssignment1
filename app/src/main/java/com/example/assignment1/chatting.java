@@ -46,5 +46,6 @@ public class chatting extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

@@ -25,5 +25,6 @@ public class forgotpass extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

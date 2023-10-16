@@ -24,5 +24,6 @@ public class videocall extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

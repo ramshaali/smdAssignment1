@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -15,10 +16,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class enteritem extends AppCompatActivity {
     private final int code_gallery=1000;
+    Bitmap bitmap;
     ImageView imageView1;
+    String imageUrl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,22 +40,22 @@ public class enteritem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent to navigate to TargetActivity
-                Intent intent = new Intent(Intent.ACTION_PICK);
-                intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
                 startActivityForResult(intent, code_gallery);
 
 
             }
         });
 
-        imageView1.setOnClickListener(new View.OnClickListener() {
+       /* imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Create an Intent to navigate to TargetActivity
                 Intent intent = new Intent(enteritem.this, photo.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,29 +75,25 @@ public class enteritem extends AppCompatActivity {
             }
         });
 
-
         // Inside enteritem activity
         Button postItemButton = findViewById(R.id.btn);
         postItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText itemname= findViewById(R.id.name);
-                BitmapDrawable drawable=(BitmapDrawable) imageView1.getDrawable();
-                Bitmap bitmap=drawable.getBitmap();
+                EditText desc=findViewById(R.id.desc);
+                EditText  itemprice=findViewById(R.id.rate);
 
-                ByteArrayOutputStream stream= new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte[] bytearray=stream.toByteArray();
-                // Get user input from EditText fields
-                // Get user input and create an Intent to send back the item details
-                // Replace with the actual image resource
-                String name = itemname.getText().toString(); // Replace with the actual item name
-                String price = "Item Price"; // Replace with the actual item price
-                int views = 0; // Replace with the actual number of views
-                String date = "Item Date"; // Replace with the actual item date
+
+                String name = itemname.getText().toString();
+                String price = itemprice.getText().toString();
+                int views = 1;
+                String date = getCurrentDate();
 
                 Intent resultIntent = new Intent();
-                resultIntent.putExtra("img", bytearray);
+                //resultIntent.putExtra("img", bytearray);
+                resultIntent.putExtra("img", imageUrl);
+
                 resultIntent.putExtra("name", name);
                 resultIntent.putExtra("price", price);
                 resultIntent.putExtra("views", views);
@@ -101,6 +104,17 @@ public class enteritem extends AppCompatActivity {
             }
         });
 
+
+    }
+    private String getCurrentDate() {
+        // Create a date object
+        Date currentDate = new Date();
+
+        // Define the date format
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+
+        // Format the date and store it as a string
+        return dateFormat.format(currentDate);
     }
 
     @Override
@@ -108,10 +122,10 @@ public class enteritem extends AppCompatActivity {
 
 
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode==RESULT_OK){
-            if (resultCode==code_gallery){
-                imageView1.setImageURI(data.getData());
-            }
+        if (resultCode == RESULT_OK && requestCode == code_gallery && data != null) {
+            Uri selectedImage = data.getData();
+            imageUrl = selectedImage.toString();
+            imageView1.setImageURI(selectedImage);
         }
     }
 

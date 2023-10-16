@@ -20,17 +20,17 @@ public class searchresults extends AppCompatActivity {
         setContentView(R.layout.activity_searchresults);
 
 
-       /* ImageView button = findViewById(R.id.img1);
+       ImageView button = findViewById(R.id.backButton);
 
         // Set an OnClickListener for the button
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Create an Intent to navigate to NextActivity
-                Intent intent = new Intent(searchresults.this, itemdet.class);
+                Intent intent = new Intent(searchresults.this, dashboard.class);
                 startActivity(intent);
             }
-        });*/
+        });
         RecyclerView recyclerView1 = findViewById(R.id.rv);
 
         LinearLayoutManager layoutManager1 = new LinearLayoutManager(this);
@@ -44,8 +44,9 @@ public class searchresults extends AppCompatActivity {
 
         // Set up the RecyclerView with a custom adapter
 
-        recycleadapter adapter1 = new recycleadapter(filteredItems);
+        recycleadapter adapter1 = new recycleadapter(filteredItems, this);
         recyclerView1.setAdapter(adapter1);
+
 
     }
 }

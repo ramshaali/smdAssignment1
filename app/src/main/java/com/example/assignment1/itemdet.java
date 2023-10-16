@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,15 @@ public class itemdet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itemdet);
+        TextView name= findViewById(R.id.name);
+        TextView price=findViewById(R.id.price);
+        ImageView img= findViewById(R.id.slide);
+        TextView date= findViewById(R.id.date);
+        name.setText(getIntent().getStringExtra("name"));
+        date.setText(getIntent().getStringExtra("date"));
+        price.setText(getIntent().getStringExtra("price"));
+        String imageUrl = getIntent().getStringExtra("img");
+        Picasso.get().load(imageUrl).into(img);
 
 
       /*  List<Integer> img = new ArrayList<>();
@@ -46,7 +57,7 @@ public class itemdet extends AppCompatActivity {
 
 
         Button button = findViewById(R.id.btn);
-
+        ImageView del = findViewById(R.id.del);
         // Set an OnClickListener for the button
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,33 +69,29 @@ public class itemdet extends AppCompatActivity {
         });
 
 
-      TextView name= findViewById(R.id.name);
-      TextView price=findViewById(R.id.price);
-      ImageView img= findViewById(R.id.slide);
-      TextView date= findViewById(R.id.date);
-      name.setText(getIntent().getStringExtra("name"));
-      date.setText(getIntent().getStringExtra("date"));
-      price.setText(getIntent().getStringExtra("price"));
-      Bitmap receivedBitmap = getIntent().getParcelableExtra("img");
-      img.setImageBitmap(receivedBitmap);
+        del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to navigate to NextActivity
+                int positionToDelete = getIntent().getIntExtra("positionToDelete", -1);
+
+                if (positionToDelete != -1) {
+                    // Create an intent to send back the deleted item position
+                    Intent intent = new Intent();
+                    intent.putExtra("positionToDelete", positionToDelete);
+                    setResult(RESULT_OK, intent);
+
+                    // Finish the activity to return to the previous one
+                    finish();
+                }
+            }
+        });
+
 
 
 
 
 
     }
-    public void deletebuttonclick(View view) {
-        // Get the position of the currently displayed item
-        int positionToDelete = getIntent().getIntExtra("positionToDelete", -1);
 
-        if (positionToDelete != -1) {
-            // Create an intent to send back the deleted item position
-            Intent intent = new Intent();
-            intent.putExtra("positionToDelete", positionToDelete);
-            setResult(RESULT_OK, intent);
-
-            // Finish the activity to return to the previous one
-            finish();
-        }
-    }
 }

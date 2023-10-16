@@ -37,5 +37,6 @@ public class photo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

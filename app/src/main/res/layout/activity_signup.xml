@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".signup"
+    android:id="@+id/signup"
     android:padding="15dp"
     >
 
@@ -62,7 +63,7 @@
         android:layout_below="@+id/textname"
 
         >
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Name"
@@ -71,7 +72,7 @@
             android:paddingEnd="16dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
+            android:minHeight="48dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -98,16 +99,17 @@
 
         android:layout_below="@+id/textemail"
        >
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#00000000"
             android:paddingStart="16dp"
             android:hint="Enter Email"
+            android:id="@+id/email"
             android:paddingEnd="16dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
+            android:minHeight="48dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,16 +141,17 @@
         android:background="@drawable/square2"
 
         >
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#00000000"
             android:paddingStart="16dp"
-            android:hint="Enter contact number"
+            android:hint="Enter password"
             android:paddingEnd="16dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:minHeight="48dp"></com.google.android.material.textfield.TextInputEditText>
+            android:id="@+id/pass"
+            android:minHeight="48dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
