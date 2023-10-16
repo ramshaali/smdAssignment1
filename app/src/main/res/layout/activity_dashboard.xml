@@ -37,14 +37,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignRight="@id/mess"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="60dp"
                     android:layout_marginTop="16dp"
 
                     android:layout_marginRight="-64dp"
-                    android:text="Ramsha"
+                    android:text="Ram"
                     android:textColor="#FFA500"
                     android:textSize="24sp" />
 
+
+                <ImageView
+                    android:id="@+id/req"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/mess2"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="-107dp"
+                    android:src="@drawable/mail"
+
+                    android:textColor="#FFA500"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/logout"
@@ -52,8 +65,8 @@
                     android:layout_height="53dp"
                     android:layout_alignRight="@id/mess2"
                     android:layout_marginLeft="200dp"
-                      android:layout_marginTop="20dp"
-                    android:layout_marginRight="-208dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="-211dp"
                     android:text="Logout"
                     android:textColor="@color/black"
                     android:textSize="19sp" />

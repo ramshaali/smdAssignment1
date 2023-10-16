@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +32,9 @@ public class itemdet extends AppCompatActivity {
         price.setText(getIntent().getStringExtra("price"));
         String imageUrl = getIntent().getStringExtra("img");
         Picasso.get().load(imageUrl).into(img);
+
+        String ownerId= getIntent().getStringExtra("ownerid");
+        String itemid= getIntent().getStringExtra("id");
 
 
       /*  List<Integer> img = new ArrayList<>();
@@ -63,7 +67,20 @@ public class itemdet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent to navigate to NextActivity
-                Intent intent = new Intent(itemdet.this, dashboard.class);
+                Intent intent = new Intent(itemdet.this, RentActivity.class);
+                TextView price= findViewById(R.id.price);
+                String userInput = price.getText().toString();
+                int convertedInput = 0;
+
+                try {
+                     convertedInput = Integer.parseInt(userInput);
+
+                } catch (NumberFormatException e) {
+
+                }
+                intent.putExtra("ownerid", ownerId);
+                intent.putExtra("id",itemid);
+                intent.putExtra("INT_KEY", convertedInput);
                 startActivity(intent);
             }
         });

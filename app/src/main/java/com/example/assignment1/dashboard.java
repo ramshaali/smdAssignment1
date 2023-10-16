@@ -31,6 +31,7 @@ public class dashboard extends AppCompatActivity {
 
     recycleadapter adapter1;
     recycleadapter adapter2;
+    String ownerId;
     private static final int ITEM_DETAIL_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,8 @@ public class dashboard extends AppCompatActivity {
         ImageView imageView4 = findViewById(R.id.plus);
         TextView logout = findViewById(R.id.logout);
         mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+      ownerId = currentUser.getUid();
 
 
 
@@ -58,6 +61,17 @@ public class dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 // Create an Intent to navigate to TargetActivity
                 Intent intent = new Intent(dashboard.this, chat.class);
+                startActivity(intent);
+            }
+        });
+
+
+        ImageView req= findViewById(R.id.req);
+        req.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to navigate to TargetActivity
+                Intent intent = new Intent(dashboard.this, Requests.class);
                 startActivity(intent);
             }
         });
@@ -116,8 +130,8 @@ public class dashboard extends AppCompatActivity {
          itemList1 = new ArrayList<>();
         String imageUrl = "android.resource://com.example.assignment1/" + R.drawable.camera;
 
-        itemList1.add(new itemcard(imageUrl, "Camera", "$10", 1000, "7th Mar"));
-        itemList1.add(new itemcard(imageUrl, "Chair", "$10", 750, "6th Mar"));
+        itemList1.add(new itemcard(imageUrl, "Camera", "$10", 1000, "7th Mar", ownerId));
+        itemList1.add(new itemcard(imageUrl, "Chair", "$10", 750, "6th Mar", ownerId));
 
          itemList2 = new ArrayList<>();
         //itemList2.add(new itemcard(bitmap, "Item 3", "$12/hr", 1200, "8th Mar"));
@@ -157,9 +171,7 @@ public class dashboard extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode==1 && resultCode==RESULT_OK &&data!=null){
-            //byte[] byteArray = getIntent().getByteArrayExtra("img");
-            Bitmap imgbitmap= null; //BitmapFactory.decodeByteArray(byteArray,0, byteArray.length);
-            // Extract the item details from the data received from 'enteritem' activity
+
             String Url=data.getStringExtra("img");
             String name = data.getStringExtra("name");
             String price = data.getStringExtra("price");
@@ -167,7 +179,7 @@ public class dashboard extends AppCompatActivity {
             String date = data.getStringExtra("date");
 
 
-            itemcard newItem = new itemcard(Url, name, price, views, date);
+            itemcard newItem = new itemcard(Url, name, price, views, date,ownerId);
 
 
            itemList1.add(newItem);

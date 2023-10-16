@@ -15,12 +15,16 @@ public class itemcard implements Parcelable {
     private int views;
     private String date;
 
-    public itemcard(String img, String name, String price, int views, String date) {
+    private String ownerid;
+    private String id;
+
+    public itemcard(String img, String name, String price, int views, String date, String ownerid) {
         this.img = img;
         this.name = name;
         this.price = price;
         this.views = views;
         this.date = date;
+        this.ownerid=ownerid;
     }
 
     protected itemcard(Parcel in) {
@@ -30,6 +34,8 @@ public class itemcard implements Parcelable {
         price = in.readString();
         views = in.readInt();
         date = in.readString();
+        ownerid=in.readString();
+        id=in.readString();
     }
 
     public static final Creator<itemcard> CREATOR = new Creator<itemcard>() {
@@ -89,6 +95,22 @@ public class itemcard implements Parcelable {
         return 0;
     }
 
+    public String getOwnerid() {
+        return ownerid;
+    }
+
+    public void setOwnerid(String ownerid) {
+        this.ownerid = ownerid;
+    }
+
+    public String getid() {
+        return id;
+    }
+
+    public void setid(String id) {
+        this.id = id;
+    }
+
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int i) {
         //parcel.writeParcelable(img, i);
@@ -98,5 +120,8 @@ public class itemcard implements Parcelable {
         parcel.writeString(price);
         parcel.writeInt(views);
         parcel.writeString(date);
+        parcel.writeString(ownerid);
+        parcel.writeString(id);
+
     }
 }

@@ -106,10 +106,21 @@
         android:padding="16dp">
 
         <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFA500"
+            android:layout_marginTop="16dp" />
+
+        <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$12"
+            android:layout_marginLeft="12dp"
+            android:text="12"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#FFA500"

@@ -46,14 +46,13 @@ public class recycleadapter extends RecyclerView.Adapter<recycleadapter.ItemView
 
         String imageUrl = item.getImg();
 
-// Assuming holder.itemImage is the ImageView where you want to load the image
-
-// Use Picasso to load the image into the ImageView
         Picasso.get().load(imageUrl).into(holder.itemImage);
         holder.itemName.setText(item.getName());
         holder.price.setText(item.getPrice());
         holder.views.setText(String.valueOf(item.getViews()));
         holder.date.setText(item.getDate());
+
+
 
         holder.row.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +63,8 @@ public class recycleadapter extends RecyclerView.Adapter<recycleadapter.ItemView
                 intent.putExtra("views",itemList.get(position).getViews());
                 intent.putExtra("date",itemList.get(position).getDate());
                 intent.putExtra("img",itemList.get(position).getImg());
+                intent.putExtra("ownerid",itemList.get(position).getOwnerid());
+                intent.putExtra("id",itemList.get(position).getid());
                 context.startActivity(intent);
 
 //                Intent intent=new Intent();

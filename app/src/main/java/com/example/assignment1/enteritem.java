@@ -1,5 +1,6 @@
 package com.example.assignment1;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -84,11 +93,50 @@ public class enteritem extends AppCompatActivity {
                 EditText desc=findViewById(R.id.desc);
                 EditText  itemprice=findViewById(R.id.rate);
 
-
                 String name = itemname.getText().toString();
                 String price = itemprice.getText().toString();
                 int views = 1;
                 String date = getCurrentDate();
+
+                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+
+
+                DatabaseReference itemsRef = rootRef.child("items");
+
+
+                FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                String ownerId = currentUser.getUid();
+
+
+                itemcard newItem = new itemcard(imageUrl, name, price, views, date, ownerId);
+
+
+                itemsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (!dataSnapshot.exists()) {
+                            // Create the "items" node and push the new item
+                            String itemId = itemsRef.push().getKey();
+                            newItem.setid(itemId);
+                            itemsRef.child(itemId).setValue(newItem);
+                        } else {
+                            // The "items" node exists, push the new item
+                            String itemId = itemsRef.push().getKey();
+                            newItem.setid(itemId);
+
+                            itemsRef.child(itemId).setValue(newItem);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
+
+
 
                 Intent resultIntent = new Intent();
                 //resultIntent.putExtra("img", bytearray);
