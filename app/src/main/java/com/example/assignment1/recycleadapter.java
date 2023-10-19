@@ -48,7 +48,8 @@ public class recycleadapter extends RecyclerView.Adapter<recycleadapter.ItemView
 
         Picasso.get().load(imageUrl).into(holder.itemImage);
         holder.itemName.setText(item.getName());
-        holder.price.setText(item.getPrice());
+        holder.price.setText("$" + item.getPrice() + "/hr");
+
         holder.views.setText(String.valueOf(item.getViews()));
         holder.date.setText(item.getDate());
 
@@ -65,6 +66,7 @@ public class recycleadapter extends RecyclerView.Adapter<recycleadapter.ItemView
                 intent.putExtra("img",itemList.get(position).getImg());
                 intent.putExtra("ownerid",itemList.get(position).getOwnerid());
                 intent.putExtra("id",itemList.get(position).getid());
+                intent.putExtra("positiontodelete", position);
                 context.startActivity(intent);
 
 //                Intent intent=new Intent();

@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,7 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class RentActivity extends AppCompatActivity {
-
+    String email;
+    String itemName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,40 +32,75 @@ public class RentActivity extends AppCompatActivity {
         int pricePerHour = intent.getIntExtra("INT_KEY", 0);
         String oid = intent.getStringExtra("ownerid");
         String iid = intent.getStringExtra("id");
+        String img = intent.getStringExtra("img");
 
 
-        EditText hoursuser= findViewById(R.id.hours);
-        String hours = hoursuser.getText().toString();
-        int convertedInput = 0;
-
-        try {
-            convertedInput = Integer.parseInt(hours);
-
-        } catch (NumberFormatException e) {
-
-        }
-        int totalCost = pricePerHour * convertedInput;
-        String priceString = "$" + totalCost;
 
 
-        TextView price = findViewById(R.id.price);
-        price.setText(priceString);
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        Button cal= findViewById(R.id.buttonCalculate);
+        cal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                EditText hoursuser= findViewById(R.id.hours);
+                String hours = hoursuser.getText().toString();
+                int convertedInput = 0;
+
+                try {
+                    convertedInput = Integer.parseInt(hours);
+
+                } catch (NumberFormatException e) {
+
+                }
+                int totalCost = pricePerHour * convertedInput;
+                String priceString = "$" + totalCost;
+
+                TextView price = findViewById(R.id.price);
+                price.setText(priceString);
+            }
+        });
 
 
-        DatabaseReference itemsRef = rootRef.child("requests");
 
 
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        String requestId = currentUser.getUid();
 
 
-        request newreq= new request(iid,requestId,oid);
+
+
 
         Button btn= findViewById(R.id.rentit);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+
+
+                DatabaseReference itemsRef = rootRef.child("requests");
+
+
+                FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                String requestId = currentUser.getUid();
+
+
+                FirebaseDatabase.getInstance().getReference("users").child(requestId).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            email = dataSnapshot.child("Identifier").getValue(String.class);
+                            Log.d("TAG", "email: " + email);
+
+                        } else {
+                            Toast.makeText(RentActivity.this,"email not found",Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        // Handle any errors
+                    }
+                });
+                email="sabeen@gmail.com";
+                request newreq= new request(iid,email,oid,img);
 
                 itemsRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -83,6 +122,12 @@ public class RentActivity extends AppCompatActivity {
 
                     }
                 });
+
+
+                Toast.makeText(RentActivity.this,"Request Successful",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(RentActivity.this, dashboard.class);
+                startActivity(intent);
+
 
             }
         });

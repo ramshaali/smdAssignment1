@@ -17,6 +17,11 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +50,32 @@ public class dashboard extends AppCompatActivity {
         TextView logout = findViewById(R.id.logout);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-      ownerId = currentUser.getUid();
+        ownerId = currentUser.getUid();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("items"); // Replace with your reference
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                itemList1.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    itemcard item = snapshot.getValue(itemcard.class);
+                    itemList1.add(item);
+                }
+                // Update your RecyclerView adapter with the itemList here
+                adapter1.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Handle error
+            }
+        });
+
+
+
+
+
 
 
 
@@ -106,6 +136,7 @@ public class dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 // Create an Intent to navigate to TargetActivity
                 Intent intent = new Intent(dashboard.this, enteritem.class);
+
                 startActivityForResult(intent,1);
             }
         });
@@ -155,7 +186,7 @@ public class dashboard extends AppCompatActivity {
     }
 
 
-    @Override
+   /* @Override
     protected void onStart( ){
         super.onStart();
 
@@ -164,7 +195,13 @@ public class dashboard extends AppCompatActivity {
             startActivity(new Intent(dashboard.this, LoginActivity.class));
         }
 
-    }
+    }*/
+
+
+
+
+
+
     @Override
     protected  void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
@@ -188,18 +225,6 @@ public class dashboard extends AppCompatActivity {
 
             recyclerView1.getAdapter().notifyDataSetChanged();
             //recyclerView2.getAdapter().notifyDataSetChanged();
-        }else   if (requestCode == ITEM_DETAIL_REQUEST && resultCode == RESULT_OK) {
-            int positionToDelete = data.getIntExtra("positionToDelete", -1);
-
-            if (positionToDelete != -1) {
-                // Remove the item from the dataset
-                itemList1.remove(positionToDelete);
-                itemList2.remove(positionToDelete);
-
-                // Notify the adapter that the dataset has changed
-                adapter1.notifyItemRemoved(positionToDelete);
-                //adapter2.notifyItemRemoved(positionToDelete);
-            }
         }
     }
 

@@ -18,6 +18,9 @@ public class itemcard implements Parcelable {
     private String ownerid;
     private String id;
 
+    public itemcard() {
+    }
+
     public itemcard(String img, String name, String price, int views, String date, String ownerid) {
         this.img = img;
         this.name = name;

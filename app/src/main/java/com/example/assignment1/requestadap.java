@@ -15,7 +15,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class requestadap extends RecyclerView.Adapter<requestadap.ItemViewHolder> {
     private List<request> itemList;
@@ -38,7 +42,8 @@ public class requestadap extends RecyclerView.Adapter<requestadap.ItemViewHolder
     public void onBindViewHolder(@NonNull ItemViewHolder holder, @SuppressLint("RecyclerView") int position) {
         request item = itemList.get(position);
 
-
+        String url= item.getImg();
+        Picasso.get().load(url).into(holder.img);
         holder.itemid.setText(item.getItemId());
         holder.requestid.setText(item.getRequesterId());
 
@@ -81,13 +86,15 @@ public class requestadap extends RecyclerView.Adapter<requestadap.ItemViewHolder
         Button btn2;
         LinearLayout row2;
 
+        CircleImageView img;
+
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             itemid = itemView.findViewById(R.id.itemid);
             requestid = itemView.findViewById(R.id.requestid);
             btn1= itemView.findViewById(R.id.btnaccept);
             btn2= itemView.findViewById(R.id.btnreject);
-
+            img=itemView.findViewById(R.id.dp);
             row2=itemView.findViewById(R.id.row2);
 
 
