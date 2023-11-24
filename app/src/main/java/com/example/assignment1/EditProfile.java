@@ -59,56 +59,10 @@ public class EditProfile extends AppCompatActivity {
                 String email = emailTextBox.getText().toString();
                 String contact = contactTextBox.getText().toString();
 
-                //Add to db
-               /* DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-                DatabaseReference itemsRef = rootRef.child("Users");
 
-                FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-                 String userId="6789j9";
-                if (currentUser != null) {
-                    // Call the getUid() method here
-                    userId = currentUser.getUid();
-                    // Perform other operations with the uid
-                } else {
-                    // Handle the case where the user is not authenticated
-                }
-          */
                 String imageUrl = "android.resource://com.example.assignment1/" + R.drawable.profile;
 
-              /*  Query query = itemsRef.orderByChild("id").equalTo(userId);
-                String finalUserId = userId;
-                query.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            // Update the existing item
-                            for (DataSnapshot itemSnapshot : dataSnapshot.getChildren()) {
-                                User user = itemSnapshot.getValue(User.class);
 
-                                // Update the item's fields with new data
-                                user.setName(name);
-                                user.setEmail(email);
-                                user.setContact(contact);
-                                user.setDisplaypic(imageUrl);
-                                user.setCoverpic(imageUrl);
-
-                                itemsRef.child(finalUserId).setValue(user);
-                            }
-                        } else {
-                            User newUser = new User(name, email, contact, finalUserId);
-                            newUser.setDisplaypic(imageUrl);
-                            newUser.setCoverpic(imageUrl);
-                            newUser.setId(finalUserId);
-                            itemsRef.child(finalUserId).setValue(newUser);
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        // Handle errors
-                    }
-
-                });*/
 
                 User newItem =  new User (name, email,contact, id);
 
@@ -148,7 +102,7 @@ public class EditProfile extends AppCompatActivity {
 
         @Override
         protected String doInBackground(User... params) {
-            String url = "http://192.168.100.19/assignment/updateuser.php"; // Change to your PHP script URL
+            String url = "http://192.168.100.19/assignment/updateuser.php";
 
             try {
                 // Build the data string for POST request
@@ -197,11 +151,10 @@ public class EditProfile extends AppCompatActivity {
                     }
                     bufferedReader.close();
                 } else {
-                    // Handle error cases
+
                     return "Error sending message. Response code: " + responseCode;
                 }
 
-                // Return the response from the server
                 Log.d("Ramsha", "Response: " + response.toString());
                 return response.toString();
 
@@ -211,7 +164,7 @@ public class EditProfile extends AppCompatActivity {
         }
 
         protected void onPostExecute(String result) {
-            // Handle the result if needed
+
         }
     }
 
