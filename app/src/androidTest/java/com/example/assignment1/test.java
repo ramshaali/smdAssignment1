@@ -4,6 +4,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static androidx.test.espresso.Espresso.closeSoftKeyboard;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
@@ -17,16 +18,20 @@ public class test {
         @Rule
         public ActivityScenarioRule<LoginActivity> activityRule = new ActivityScenarioRule<>(LoginActivity.class);
 
-        @Test
-        public void testValidLogin() {
-            onView(withId(R.id.email)).perform(typeText("valid_email"));
-            onView(withId(R.id.pass)).perform(typeText("valid_password"));
-            onView(withId(R.id.btn)).perform(click());
-            // Add assertion to check if the dashboard activity is displayed
-            onView(withId(R.id.dash)).check(matches(isDisplayed()));
-        }
+    @Test
+    public void testValidLogin() {
+        // Replace with the correct view IDs
+        onView(withId(R.id.email)).perform(typeText("ramsha@gmail.com"));
+        onView(withId(R.id.pass)).perform(typeText("ram123"));
+        closeSoftKeyboard();
+        onView(withId(R.id.btn)).perform(click());
 
-        @Test
+
+        onView(withId(R.id.dash)).check(matches(isDisplayed()));
+    }
+
+
+    @Test
         public void testInvalidLogin() {
             onView(withId(R.id.email)).perform(typeText("invalid_email"));
             onView(withId(R.id.pass)).perform(typeText("invalid_password"));

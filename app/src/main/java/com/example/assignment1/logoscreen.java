@@ -19,24 +19,35 @@ public class logoscreen extends AppCompatActivity {
         setContentView(R.layout.activity_logoscreen);
         mAuth = FirebaseAuth.getInstance();
 
+        if (mAuth.getCurrentUser() != null) {
+            Intent intent = new Intent(logoscreen.this, dashboard.class);
+            startActivity(intent);
+            finish();
+        }
+        else
+        {
+            // Use a Handler to post a delayed action to navigate to the login screen
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Create an Intent to navigate to the login activity
+                    Intent intent = new Intent(logoscreen.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish(); // Finish the splash activity so the user can't go back to it
+                }
+            }, time);
+        }
 
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // Create an Intent to navigate to the login activity
-                Intent intent = new Intent(logoscreen.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }, time);
+
+
 
 
 
 
     }
 
-    @Override
+   /* @Override
     protected void onStart( ){
         super.onStart();
 
@@ -45,5 +56,5 @@ public class logoscreen extends AppCompatActivity {
             startActivity(new Intent(logoscreen.this, dashboard.class));
         }
 
-    }
+    }*/
 }

@@ -58,6 +58,8 @@ dependencies {
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation (files("libs\\sinch-android-rtc-6.2.8+ee41053e.aar"))
+    implementation("com.android.volley:volley:1.2.1")
+
 
 
 

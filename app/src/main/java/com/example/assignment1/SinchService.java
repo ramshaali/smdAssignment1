@@ -15,10 +15,10 @@ import java.io.IOException;
 
 public class SinchService extends Service {
 
-    private static final String APP_KEY = "c65d962e-0c84-4ffc-8171-f7e8eb1a65e1";
-    private static final String APP_SECRET = "HgB7QgktNky7cH9ep1qkwQ==";
+    private static final String APP_KEY = "5ed8429d-3ca8-47c7-bd9c-97c561ffef1d";
+    private static final String APP_SECRET = "C9NZZIDuz0CX3YrbUlZ6zA==";
     private static final String ENVIRONMENT = "clientapi.sinch.com";
-    private static final String APP_FCM_SENDER_ID = "993701459355";
+    private static final String APP_FCM_SENDER_ID = "296510888963";
     private SinchClient sinchClient;
 
     private void createClient(String username) throws IOException {

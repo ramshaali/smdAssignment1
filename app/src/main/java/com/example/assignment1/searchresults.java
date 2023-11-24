@@ -13,12 +13,13 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 
 public class searchresults extends AppCompatActivity {
-
+    String ownerId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchresults);
-
+        Intent intent = getIntent();
+        ownerId = intent.getStringExtra("curruserid");
 
        ImageView button = findViewById(R.id.backButton);
 
@@ -44,7 +45,7 @@ public class searchresults extends AppCompatActivity {
 
         // Set up the RecyclerView with a custom adapter
 
-        recycleadapter adapter1 = new recycleadapter(filteredItems, this);
+        recycleadapter adapter1 = new recycleadapter(filteredItems, this, ownerId);
         recyclerView1.setAdapter(adapter1);
 
 

@@ -72,6 +72,29 @@ public class sqlitehelper extends SQLiteOpenHelper {
         }
 
 
+    public void deleteallitems() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(chattable.TABLE_NAME, null, null);
+        db.close();
+    }
+
+    public void insertallitems(List<Model> items) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values;
+
+        for (Model item : items) {
+            values = new ContentValues();
+            values.put(chattable._MSG, item.getMsg());
+            values.put(chattable._DPURL, item.getDp());
+            values.put(chattable._TIMESTAMP, item.getTimestamp());
+
+            db.insert(chattable.TABLE_NAME, null, values);
+        }
+
+        db.close();
+    }
+
+
     public void insertMessage(Model message) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();

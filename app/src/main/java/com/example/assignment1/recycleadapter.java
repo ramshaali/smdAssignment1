@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.util.List;
 
 
@@ -25,11 +26,12 @@ public class recycleadapter extends RecyclerView.Adapter<recycleadapter.ItemView
     private List<itemcard> itemList;
 
     private  Context context;
+    private String curruserid;
 
-
-    public recycleadapter(List<itemcard> itemList, Context context) {
+    public recycleadapter(List<itemcard> itemList, Context context, String curruserid) {
         this.itemList = itemList;
         this.context = context;
+        this.curruserid = curruserid;
     }
 
 
@@ -67,6 +69,8 @@ public class recycleadapter extends RecyclerView.Adapter<recycleadapter.ItemView
                 intent.putExtra("ownerid",itemList.get(position).getOwnerid());
                 intent.putExtra("id",itemList.get(position).getid());
                 intent.putExtra("positiontodelete", position);
+                intent.putExtra("desc", itemList.get(position).getDesc());
+                intent.putExtra("curruserid", curruserid);
                 context.startActivity(intent);
 
 //                Intent intent=new Intent();
@@ -79,9 +83,11 @@ public class recycleadapter extends RecyclerView.Adapter<recycleadapter.ItemView
     }
 
     @Override
-    public int getItemCount() {
-        return itemList.size();
-    }
+
+        public int getItemCount() {
+            return itemList != null ? itemList.size() : 0;
+        }
+
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
         ImageView itemImage;

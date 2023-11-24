@@ -6,6 +6,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,14 +47,18 @@ public class itemdet extends AppCompatActivity {
         TextView price=findViewById(R.id.price);
         ImageView img= findViewById(R.id.slide);
         TextView date= findViewById(R.id.date);
+        TextView desc=findViewById(R.id.desc);
         name.setText(getIntent().getStringExtra("name"));
         date.setText(getIntent().getStringExtra("date"));
         price.setText(getIntent().getStringExtra("price"));
+        desc.setText(getIntent().getStringExtra("desc"));
+
         String imageUrl = getIntent().getStringExtra("img");
         Picasso.get().load(imageUrl).into(img);
 
         String ownerId= getIntent().getStringExtra("ownerid");
         String itemid= getIntent().getStringExtra("id");
+        String curr_id= getIntent().getStringExtra("curruserid");
 
 
       /*  List<Integer> img = new ArrayList<>();
@@ -96,7 +109,7 @@ public class itemdet extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        String curr_id= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        //String curr_id= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         if(curr_id.equals(ownerId)){
             del.setVisibility(View.VISIBLE);
@@ -108,8 +121,12 @@ public class itemdet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               FirebaseDatabase database= FirebaseDatabase.getInstance();
-                DatabaseReference ref=database.getReference("items");
+                DeleteItemTask deleteItemTask = new DeleteItemTask();
+                deleteItemTask.execute(itemid);
+
+              /*  DatabaseReference ref=database.getReference("items");
                 DatabaseReference deleteitem=ref.child(itemid);
+                new DeleteItemTask().execute(itemid);
 
                 deleteitem.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -122,17 +139,80 @@ public class itemdet extends AppCompatActivity {
 
                         }
                     }
-                });
+                });*/
 
                 finish();
             }
         });
 
 
+        ImageView imageView4= findViewById(R.id.chat);
 
-
+        imageView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to navigate to TargetActivity
+                Intent intent = new Intent(itemdet.this, chat_open.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
+
+  public static class DeleteItemTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String itemId = params[0];
+            String deleteUrl = "http://192.168.100.19/assignment/delete.php";
+
+            try {
+                URL url = new URL(deleteUrl);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setDoOutput(true);
+
+                // Prepare the data to be sent
+                String postData = "id=" + itemId;
+
+                // Write data to the connection
+                OutputStream os = connection.getOutputStream();
+                os.write(postData.getBytes());
+                os.flush();
+                os.close();
+
+                // Get the response from the server
+                int responseCode = connection.getResponseCode();
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    StringBuilder response = new StringBuilder();
+                    String line;
+
+                    while ((line = in.readLine()) != null) {
+                        response.append(line);
+                    }
+
+                    in.close();
+                    return response.toString();
+                } else {
+                    return "Error: " + responseCode;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Error: " + e.getMessage();
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            // Handle the result after the task completes
+            Log.d("DeleteItemTask", "Result: " + result);
+
+            // You can implement further logic based on the result
+            // For example, show a Toast or update UI
+        }
+    }
+
 
 }

@@ -203,6 +203,7 @@
 
 
         <TextView
+            android:id="@+id/desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="This is a multi-line text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -257,6 +258,7 @@
 
 
         <ImageView
+            android:id="@+id/chat"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/chat"
